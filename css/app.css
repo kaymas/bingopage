@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 html { font-size: 10px; }
 
-body { font-size: 1.6rem; margin: 0; padding: 0; font-family: "Source Sans Pro", arial, sans-serif; background: pink; }
+body { font-size: 1.6rem; margin: 0; padding: 0; font-family: "Source Sans Pro", arial, sans-serif; background: white; }
 
 ul { list-style: none; margin: 0; padding: 0; }
 
@@ -18,13 +18,23 @@ hr { color: #333; }
 
 .top { position: relative; }
 
-.top_elements { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; margin-right: 40px; }
+.top_elements { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin-right: 40px; }
 .top_elements li { position: relative; }
-.top_elements li a { display: inline-block; padding: 10px 20px; margin: 10px 20px; font-size: 1.8rem; }
+.top_elements li a { display: inline-block; padding: 10px 20px; margin: 10px 20px; font-size: 1.8rem; color: white; }
 .top_elements li .dropDown { opacity: 0; display: none; position: absolute; overflow: hidden; padding: 20px; top: -40px; border-radius: 2px; -webkit-transition: all 300ms; transition: all 300ms; -webkit-transform: translateY(100px); transform: translateY(100px); will-change: transform; }
 
-.dropDownBackground { width: 100px; height: 100px; position: absolute; background: white; border-radius: 4px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 50px rgba(50, 50, 93, 0.1), 0 5px 50px rgba(0, 0, 0, 0.1); box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 50px rgba(50, 50, 93, 0.1), 0 5px 50px rgba(0, 0, 0, 0.1); opacity: 0; -webkit-transition: all 300ms, opacity 100ms, translate 200ms; transition: all 300ms, opacity 100ms, translate 200ms; -webkit-transform-origin: 50% 0%; transform-origin: 50% 0%; }
+.dropDownBackground { width: 100px; height: 100px; position: absolute; background: white; border-radius: 4px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 50px rgba(50, 50, 93, 0.1), 0 5px 50px rgba(0, 0, 0, 0.1); box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 50px rgba(50, 50, 93, 0.1), 0 5px 50px rgba(0, 0, 0, 0.1); opacity: 0; -webkit-transition: all 300ms, opacity 100ms, translate 200ms; transition: all 300ms, opacity 100ms, translate 200ms; -webkit-transform-origin: 50% 0%; transform-origin: 50% 0%; -webkit-transform: translate(50vw, 0); transform: translate(50vw, 0); }
 .dropDownBackground .arrow { position: absolute; width: 20px; height: 20px; display: block; background: white; -webkit-transform: translateY(-50%) rotate(45deg); transform: translateY(-50%) rotate(45deg); }
+
+.stripes { display: grid; grid: repeat(5, 150px)/repeat(10, 1fr); position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: -1; -webkit-transform: skewY(-12deg); transform: skewY(-12deg); -webkit-transform-origin: 0; transform-origin: 0; background: -webkit-gradient(linear, left top, left bottom, from(#D81B60), color-stop(10%, #EC407A), color-stop(40%, #F48FB1), color-stop(50%, #F8BBD0), color-stop(90%, #FCE4EC), to(#fff)); background: linear-gradient(to bottom, #D81B60, #EC407A 10%, #F48FB1 40%, #F8BBD0 50%, #FCE4EC 90%, #fff 100%); }
+
+.strip:nth-child(1) { grid-row: 1/span 4; grid-column: 1; background: -webkit-gradient(linear, left bottom, left top, from(#D81B60), color-stop(10%, #EC407A)); background: linear-gradient(to top, #D81B60, #EC407A 10%); }
+
+.strip:nth-child(2) { grid-row: 2; grid-column: span 7/-1; background: #D81B60; }
+
+.strip:nth-child(3) { grid-row: 4; grid-column: 3/span 5; background: #F48FB1; }
+
+.strip:last-child { grid-row: 2/span 3; grid-column: 3; background-color: #EC407A; }
 
 .trigger-enter .dropDown { display: block !important; }
 

@@ -1,0 +1,34 @@
+.stripes
+    display: grid
+    grid: repeat(5,150px) / repeat(10,1fr)
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: -1
+    transform: skewY(-12deg)
+    transform-origin: 0
+    background: linear-gradient(to bottom, #D81B60, #EC407A 10%, #F48FB1 40%, #F8BBD0 50%, #FCE4EC 90%, #fff 100%)
+
+.strip:nth-child(1)
+    grid-row: 1 / span 4
+    grid-column: 1
+    background: linear-gradient(to top, #D81B60, #EC407A 10%)
+
+.strip:nth-child(2)
+    grid-row: 2
+    grid-column: span 7 / -1
+    background:  #D81B60
+
+.strip:nth-child(3)
+    grid-row: 4
+    grid-column: 3 / span 5
+    background: #F48FB1
+
+.strip:last-child
+    grid-row: 2 / span 3
+    grid-column: 3
+    background-color: #EC407A
+
+    
