@@ -13,6 +13,7 @@
     let bingoNum = 0;
     let delArrayNum = 0;
 
+    var soundManager = SoundManager();
     
     let panelLeft = document.getElementsByClassName('panel_left')[0];
     let panelRight = document.getElementsByClassName('panel_right')[0];
@@ -41,6 +42,7 @@
         if(isPlaying) return;
 
         isPlaying = true;
+        soundManager.playDrum();
         this.classList.add('inactive');
         setTimeout(endSlot, 2000);
         runSlot(0, panelLeft);
@@ -65,6 +67,8 @@
 
     let endSlot = function(){
         isPlaying = false;
+        soundManager.stopDrum();
+        soundManager.playCymbal();
         spinButton.classList.remove('inactive');
         delArrayNum = Bingo.indexOf(bingoNum);
         if(delArrayNum >= 0){
@@ -75,6 +79,39 @@
         bingoDiv[bingoNum-1].classList.add('matched');        
 
         
+    }
+
+    function SoundManager(){
+        var drum = document.getElementById('audio_drum');
+        var cymbal = document.getElementById('audio_cymbal');
+        return {
+          playDrum    : playDrum,
+          stopDrum    : stopDrum,
+          playCymbal  : playCymbal
+        }
+
+        function playDrum(){
+          if(drum == null){
+            return;
+          }
+          drum.currentTime = 0;
+          drum.play();
+        }
+
+        function stopDrum(){
+          if(drum == null){
+            return;
+          }
+          drum.pause();
+        }
+
+        function playCymbal(){
+          if(cymbal == null){
+            return;
+          }
+          cymbal.currentTime = 0;
+          cymbal.play();
+        }
     }
 
 })();
