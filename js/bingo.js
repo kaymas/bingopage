@@ -1,7 +1,7 @@
 (function(){
     
     let Bingo = []
-    for(var i = 1; i < 90; i++){
+    for(var i = 1; i <= 90; i++){
         Bingo.push(('0' + i).slice(-2));
     }
     // console.log(Bingo);
